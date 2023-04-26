@@ -22,13 +22,11 @@ app.get('/app/rpsls', function(req, res){
 })
 
 app.get('/app/rps/play', function(req, res){
-  if (req.query.shot != null){
-    res.send(rps(req.query.shot))
-  } else if (req.body.shot != null){
-    res.send(rps(res.json(req.body).shot))
-  } else {
-    res.send(rps())
-  }
+  res.send(rps(req.query.shot))
+})
+
+app.post('/app/rps/play', function(req, res){
+  res.send(rps(req.body.shot))
 })
 
 app.get('/app/rps/play/:shot', function(req, res){
@@ -37,13 +35,11 @@ app.get('/app/rps/play/:shot', function(req, res){
 
 
 app.get('/app/rpsls/play', function(req, res){
-  if (req.query.shot != null){
-    res.send(rpsls(req.query.shot))
-  } else if (req.body.shot != null){
-    res.send(rpsls(res.json(req.body).shot))
-  } else {
-    res.send(rpsls())
-  }
+  res.send(rpsls(req.query.shot))
+})
+
+app.post('/app/rpsls/play', function(req, res){
+  res.send(rps(req.body.shot))
 })
 
 app.get('/app/rpsls/play/:shot', function(req, res){
