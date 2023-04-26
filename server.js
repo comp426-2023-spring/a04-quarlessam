@@ -39,7 +39,7 @@ app.get('/app/rpsls/play', function(req, res){
 })
 
 app.post('/app/rpsls/play', function(req, res){
-  res.send(rps(req.body.shot))
+  res.send(rpsls(req.body.shot))
 })
 
 app.get('/app/rpsls/play/:shot', function(req, res){
