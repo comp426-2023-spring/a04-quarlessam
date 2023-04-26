@@ -20,6 +20,15 @@ app.get('/app/rpsls', function(req, res){
    res.send(rpsls())
 })
 
+app.get('/app/rps/play', function(req, res){
+   res.send(rps(req.query.SHOT))
+})
+
+app.get('/app/rpsls/play', function(req, res){
+   res.send(rpsls(req.query.SHOT))
+})
+
+
 app.get("*", (req, res) => {
   res.send("404 NOT FOUND")
 })
