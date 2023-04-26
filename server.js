@@ -9,7 +9,15 @@ const port = args.port || 5000
 var app = express();
 
 app.get('/app', function(req, res){
-   res.send("200 OK");
+   res.send("200 OK")
+})
+
+app.get('/app/rps', function(req, res){
+   res.send(rps())
+})
+
+app.get('/app/rpsls', function(req, res){
+   res.send(rpsls())
 })
 
 app.get("*", (req, res) => {
