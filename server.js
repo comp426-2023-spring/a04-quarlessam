@@ -24,27 +24,31 @@ app.get('/app/rpsls', function(req, res){
 app.get('/app/rps/play', function(req, res){
   if (req.query.shot != null){
     res.send(rps(req.query.shot))
-  } else if (res.json(req.body).shot != null){
+  } else if (req.body.shot != null){
     res.send(rps(res.json(req.body).shot))
   } else {
     res.send(rps())
   }
 })
 
+app.get('/app/rps/play/:shot', function(req, res){
+  res.send(rps(req.params.shot))
+})
+
+
 app.get('/app/rpsls/play', function(req, res){
   if (req.query.shot != null){
     res.send(rpsls(req.query.shot))
-  } else if (res.json(req.body).shot != null){
+  } else if (req.body.shot != null){
     res.send(rpsls(res.json(req.body).shot))
   } else {
     res.send(rpsls())
   }
 })
 
-app.get('/app/rpsls/play', function(req, res){
-  res.send(rpsls(req.query.shot))
+app.get('/app/rpsls/play/:shot', function(req, res){
+  res.send(rpsls(req.params.shot))
 })
-
 
 app.get("*", (req, res) => {
   res.send("404 NOT FOUND")
