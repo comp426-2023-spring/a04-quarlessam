@@ -10,13 +10,10 @@ var app = express();
 
 app.get('/app', function(req, res){
    res.send("200 OK");
-
-app.get('/app', function(req, res){
-   res.send("200 OK");
-});
+})
 
 app.get("*", (req, res) => {
-  res.send("404 NOT FOUND");
-});
+  res.send("404 NOT FOUND")
+})
 
 app.listen(port);
